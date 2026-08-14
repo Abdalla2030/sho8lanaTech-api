@@ -14,7 +14,7 @@ import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import reactor.netty.http.client.HttpClient;
 
-@Component
+//@Component
 public class UpplyPublisher implements JobPublisher {
 
     private final WebClient webClient =
