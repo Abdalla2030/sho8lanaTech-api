@@ -54,13 +54,6 @@ public class JobPostParser {
                 continue;
             }
 
-            if (isInlineField(trimmedLine, "Level")) {
-                flushBlock(jobResponse, currentBlock, blockBuilder);
-                currentBlock = null;
-                jobResponse.setLevel(getInlineValue(trimmedLine, "Level"));
-                continue;
-            }
-
             if (isInlineField(trimmedLine, "Location")) {
                 flushBlock(jobResponse, currentBlock, blockBuilder);
                 currentBlock = null;
@@ -72,13 +65,6 @@ public class JobPostParser {
                 flushBlock(jobResponse, currentBlock, blockBuilder);
                 currentBlock = null;
                 jobResponse.setWorkMode(getInlineValue(trimmedLine, "Work Mode"));
-                continue;
-            }
-
-            if (isInlineField(trimmedLine, "Employment Type")) {
-                flushBlock(jobResponse, currentBlock, blockBuilder);
-                currentBlock = null;
-                jobResponse.setEmploymentType(getInlineValue(trimmedLine, "Employment Type"));
                 continue;
             }
 
