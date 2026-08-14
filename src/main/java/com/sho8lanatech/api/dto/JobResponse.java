@@ -13,13 +13,9 @@ public class JobResponse {
 
     private String company;
 
-    private String level;
-
     private String location;
 
     private String workMode;
-
-    private String employmentType;
 
     private String requiredYears;
 
@@ -69,14 +65,6 @@ public class JobResponse {
         this.company = company;
     }
 
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -91,14 +79,6 @@ public class JobResponse {
 
     public void setWorkMode(String workMode) {
         this.workMode = workMode;
-    }
-
-    public String getEmploymentType() {
-        return employmentType;
-    }
-
-    public void setEmploymentType(String employmentType) {
-        this.employmentType = employmentType;
     }
 
     public String getRequiredYears() {
