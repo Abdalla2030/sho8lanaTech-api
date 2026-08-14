@@ -2,6 +2,8 @@ package com.sho8lanatech.api.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,10 +24,10 @@ public class JobPostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "original_text", columnDefinition = "nvarchar(max)", nullable = false)
+    @Column(name = "original_text", columnDefinition = "text", nullable = false)
     private String originalText;
 
-    @Column(name = "formatted_text", columnDefinition = "nvarchar(max)", nullable = false)
+    @Column(name = "formatted_text", columnDefinition = "text", nullable = false)
     private String formattedText;
 
     @Column(name = "telegram_message_id")
@@ -34,8 +36,9 @@ public class JobPostEntity {
     @Column(name = "telegram_url", length = 500)
     private String telegramUrl;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 30, nullable = false)
-    private String status;
+    private JobPostStatus status;
 
     @Column(name = "created_at", nullable = false)
     private OffsetDateTime createdAt;
@@ -75,11 +78,11 @@ public class JobPostEntity {
         this.telegramMessageId = telegramMessageId;
     }
 
-    public String getStatus() {
+    public JobPostStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(JobPostStatus status) {
         this.status = status;
     }
 
