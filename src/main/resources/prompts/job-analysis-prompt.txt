@@ -14,7 +14,7 @@ Company must be an explicit company or organization name.
 Do not use generic descriptions such as "Multinational Company", "Leading Company", "Our Client", or similar phrases as Company.
 
 Never output placeholders such as:
-Not specified, Not mentioned, Not provided, N/A, Unknown, None, or empty fields.
+Not specified, Not mentioned, Not provided, N/A, Unknown, None, -, or empty fields.
 
 Remove duplicated information while preserving important original content.
 
@@ -106,22 +106,14 @@ email address, phone number, WhatsApp number, URL, application form/link, career
 
 Keep every useful explicit destination.
 
-Also preserve any explicit application instruction directly related to that destination, such as a required email subject line.
-
-Keep such instructions inside the same `Apply:` line.
-
-Output emails and URLs as plain text only.
-Never use markdown links, `mailto:` links, or `[text](url)` syntax.
-
-Example:
-Apply: [jobs@example.com](mailto:jobs@example.com) — Subject: Backend Developer
+If the source explicitly requires an email subject, preserve it inside the same `Apply:` line.
 
 Do not output vague instructions such as:
 LinkedIn message, DM me, inbox me, comment interested
 
 when a concrete email, phone number, or URL is available.
 
-Never invent an application destination or instruction.
+Never invent an application destination.
 
 ## 7. HASHTAGS
 
@@ -200,8 +192,6 @@ General internship:
 #INS
 Use for non-university Instructor, Trainer, Tutor, Mentor, Coach, or Coaching roles.
 
-If the title clearly indicates an instructional or coaching role, use #INS instead of #GEN.
-
 Add a technical track only if the technical specialization is explicitly part of the job title.
 
 #TA
@@ -218,15 +208,13 @@ Before returning the post, verify:
 1. Every role in a multi-role post was classified.
 2. No hashtag came only from skills, requirements, responsibilities, project domain, industry, or academic program when the title was clear.
 3. #INT was not inferred from junior/fresh/experience years.
-4. #INS is used for explicit Coach, Mentor, Trainer, Tutor, or Instructor titles outside university roles.
-5. No missing value was invented.
-6. No placeholder or empty field exists.
-7. Metadata fields have no blank lines between them.
-8. There is one blank line after hashtags and before Description.
-9. Description text starts on the line after `Description:`.
-10. Skills and Apply each have one blank line before them.
-11. Apply keeps concrete destinations and any explicit required subject/instruction related to them.
-12. Emails and URLs are plain text only, never markdown links.
-13. No explanation appears before or after the Telegram post.
+4. No missing value was invented.
+5. No placeholder or empty field exists.
+6. Metadata fields have no blank lines between them.
+7. There is one blank line after hashtags and before Description.
+8. Description text starts on the line after `Description:`.
+9. Skills and Apply each have one blank line before them.
+10. Apply contains only concrete application destinations.
+11. No explanation appears before or after the Telegram post.
 
 JOB POST:
