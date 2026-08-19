@@ -14,7 +14,7 @@ Company must be an explicit company or organization name.
 Do not use generic descriptions such as "Multinational Company", "Leading Company", "Our Client", or similar phrases as Company.
 
 Never output placeholders such as:
-Not specified, Not mentioned, Not provided, N/A, Unknown, None, -, or empty fields.
+Not specified, Not mentioned, Not provided, N/A, Unknown, None, or empty fields.
 
 Remove duplicated information while preserving important original content.
 
