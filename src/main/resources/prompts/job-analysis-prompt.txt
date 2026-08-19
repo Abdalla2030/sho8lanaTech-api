@@ -110,6 +110,9 @@ Also preserve any explicit application instruction directly related to that dest
 
 Keep such instructions inside the same `Apply:` line.
 
+Output emails and URLs as plain text only.
+Never use markdown links, `mailto:` links, or `[text](url)` syntax.
+
 Example:
 Apply: [jobs@example.com](mailto:jobs@example.com) — Subject: Backend Developer
 
@@ -223,6 +226,7 @@ Before returning the post, verify:
 9. Description text starts on the line after `Description:`.
 10. Skills and Apply each have one blank line before them.
 11. Apply keeps concrete destinations and any explicit required subject/instruction related to them.
-12. No explanation appears before or after the Telegram post.
+12. Emails and URLs are plain text only, never markdown links.
+13. No explanation appears before or after the Telegram post.
 
 JOB POST:
