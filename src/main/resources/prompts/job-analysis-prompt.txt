@@ -38,7 +38,9 @@ Skills: value
 Apply: value
 
 ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ
-**لفرص أكتر، زور موقع [شغلانة تك](https://sho8lanatech.vercel.app)**
+لفرص أكتر، زور موقع شغلانة تك :
+https://sho8lanatech.vercel.app
+
 
 Title and Description are required.
 
