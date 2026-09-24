@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public interface JobPostRepository extends JpaRepository<JobPostEntity, Long> {
 
-    Optional<JobPostEntity> findByTelegramMessageId(Long telegramMessageId);
+    Optional<JobPostEntity> findByTelegramUrl(String telegramUrl);
 
     List<JobPostEntity> findByStatusAndPublishedAtBefore(
             JobPostStatus status,
@@ -27,6 +27,13 @@ public interface JobPostRepository extends JpaRepository<JobPostEntity, Long> {
                     "LEFT JOIN jobPost.tracks track " +
                     "WHERE jobPost.status = :status " +
                     "AND (:trackCode IS NULL OR track.code = :trackCode) " +
+                    "AND (" +
+                    "jobPost.formattedText LIKE '%Title:%' " +
+                    "OR jobPost.formattedText LIKE '%Company:%' " +
+                    "OR jobPost.formattedText LIKE '%Location:%' " +
+                    "OR jobPost.formattedText LIKE '%Work Mode:%' " +
+                    "OR jobPost.formattedText LIKE '%Required Years:%'" +
+                    ") " +
                     "AND (:search IS NULL OR LOWER(jobPost.formattedText) " +
                     "LIKE LOWER(CONCAT('%', CAST(:search AS String), '%')))"
     )

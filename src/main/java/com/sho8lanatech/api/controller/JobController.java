@@ -55,23 +55,23 @@ public class JobController {
         return jobService.getJobById(id);
     }
 
-    @PutMapping("/telegram/{telegramMessageId}")
+    @PutMapping("/telegram")
     public void updateJob(
-            @PathVariable Long telegramMessageId,
+            @RequestParam String telegramUrl,
             @RequestBody String text) {
 
-        jobService.updateJobByTelegramMessageId(
-                telegramMessageId,
+        jobService.updateJobByTelegramUrl(
+                telegramUrl,
                 text
         );
     }
 
-    @DeleteMapping("/telegram/{telegramMessageId}")
+    @DeleteMapping("/telegram")
     public void deleteJob(
-            @PathVariable Long telegramMessageId) {
+            @RequestParam String telegramUrl) {
 
-        jobService.deleteJobByTelegramMessageId(
-                telegramMessageId
+        jobService.deleteJobByTelegramUrl(
+                telegramUrl
         );
     }
 }

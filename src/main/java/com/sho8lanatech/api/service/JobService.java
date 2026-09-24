@@ -60,12 +60,12 @@ public class JobService {
         }
     }
 
-    public void updateJobByTelegramMessageId(
-            Long telegramMessageId,
+    public void updateJobByTelegramUrl(
+            String telegramUrl,
             String text) {
 
         JobPostEntity jobPostEntity =
-                jobPostRepository.findByTelegramMessageId(telegramMessageId)
+                jobPostRepository.findByTelegramUrl(telegramUrl)
                         .orElseThrow(() -> new RuntimeException("Job not found"));
 
         telegramPublisher.editChannelMessage(
@@ -198,10 +198,10 @@ public class JobService {
 
 
     @Transactional
-    public void deleteJobByTelegramMessageId(Long telegramMessageId) {
+    public void deleteJobByTelegramUrl(String telegramUrl) {
 
         JobPostEntity jobPostEntity =
-                jobPostRepository.findByTelegramMessageId(telegramMessageId)
+                jobPostRepository.findByTelegramUrl(telegramUrl)
                         .orElseThrow(() -> new RuntimeException("Job not found"));
 
         telegramPublisher.deleteChannelMessage(
