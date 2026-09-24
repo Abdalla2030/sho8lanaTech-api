@@ -10,8 +10,10 @@ Use only information explicitly present in the original post.
 Never invent or infer missing:
 Company, Location, Work Mode, experience, salary, employment type, application details, or other facts.
 
-Company must be an explicit company or organization name.
-Do not use generic descriptions such as "Multinational Company", "Leading Company", "Our Client", or similar phrases as Company.
+Output `Company:` ONLY when the original post explicitly names the hiring company or organization and clearly identifies it as the employer. If there is any doubt, omit the entire Company line.
+Never guess a company name from products, required skills, technologies, an application link, an email domain, or general knowledge.
+Do not use generic descriptions such as "Multinational Company", "Leading Company", "a leading company", "Our Client", or similar phrases as Company.
+Example: If a post says "Join a leading company in the electronic devices industry" and asks for knowledge of macOS, iCloud, and App Store, do not output `Company: Apple`; omit `Company:` entirely.
 
 Never output placeholders such as:
 Not specified, Not mentioned, Not provided, N/A, Unknown, None, -, or empty fields.
@@ -38,15 +40,21 @@ Skills: value
 Apply: value
 
 ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ
-لفرص أكتر، زور موقع شغلانة تك :
-https://sho8lanatech.vercel.app
+الفرصة دي مش مناسبة؟ اللي بعدها ممكن تكون شغلانتك 👀
 
+فرص أكتر على الموقع:
+https://sho8lanatech.vercel.app/
+
+وعلى قناة تيليجرام:
+https://t.me/sho8lanaTech
 
 Title and Description are required.
 
 Company, Location, Work Mode, Required Years, and Skills are optional.
 If an optional value is not explicitly present, omit the entire line.
 Never output any placeholder for a missing value.
+Use `Required Years:` only when the same experience requirement applies to the whole post or to a single role.
+For multiple roles with different experience requirements, omit `Required Years:` and preserve each role paired with its own years in Description, such as Data Quality Specialist - 3+ years, Data Steward - 5+ years, QC manual testing - 2+ years.
 
 Include Apply whenever a concrete application destination exists in the source.
 
@@ -141,10 +149,14 @@ Do not classify the whole post from only the first role.
 #BE
 Backend, Back-end, Full Stack, API Developer, Database Administrator/DBA, Database Engineer, Oracle Fusion, Odoo Developer, SharePoint Developer.
 
-Full Stack = #BE, not #FE.
+Full Stack and Full-Stack = #BE only, not #FE, even when frontend technologies appear in the title, skills, responsibilities, or description.
 
 #FE
-Frontend, Front-End, React Developer, Angular Developer, Vue Developer.
+Use #FE only for a separately named, explicit Frontend role in the job title, such as Frontend Developer, Front-End Developer, React Developer, Angular Developer, or Vue Developer.
+
+Never add #FE from skills, responsibilities, the description, or frontend technologies mentioned in a Full Stack or Full-Stack role.
+
+Backend roles get #BE only, even when skills include frontend technologies.
 
 #MOB
 Mobile, Android, iOS, Flutter, React Native.
@@ -208,7 +220,7 @@ Do not add a technical track from the academic department, program, faculty, cou
 
 Before returning the post, verify:
 
-1. Every role in a multi-role post was classified.
+1. Every role in a multi-role post was classified separately; add #FE only when one role is explicitly a Frontend role.
 2. No hashtag came only from skills, requirements, responsibilities, project domain, industry, or academic program when the title was clear.
 3. #INT was not inferred from junior/fresh/experience years.
 4. No missing value was invented.
