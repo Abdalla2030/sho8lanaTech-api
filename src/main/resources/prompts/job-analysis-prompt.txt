@@ -40,13 +40,10 @@ Skills: value
 Apply: value
 
 ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ
-الفرصة دي مش مناسبة؟ اللي بعدها ممكن تكون شغلانتك 👀
+For more tech jobs, follow sho8lanaTech - شغلانة تك:
 
-فرص أكتر على الموقع:
-https://sho8lanatech.vercel.app/
-
-وعلى قناة تيليجرام:
 https://t.me/sho8lanaTech
+https://sho8lanatech.vercel.app/
 
 Title and Description are required.
 
