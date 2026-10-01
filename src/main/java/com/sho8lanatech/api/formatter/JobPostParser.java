@@ -77,8 +77,17 @@ public class JobPostParser {
 
             if (isInlineField(trimmedLine, "Apply")) {
                 flushBlock(jobResponse, currentBlock, blockBuilder);
-                currentBlock = null;
-                jobResponse.setApply(parseApply(getInlineValue(trimmedLine, "Apply")));
+
+                String applyValue = getInlineValue(trimmedLine, "Apply");
+
+                if (!applyValue.isEmpty()) {
+                    currentBlock = null;
+                    jobResponse.setApply(parseApply(applyValue));
+                    continue;
+                }
+
+                currentBlock = "Apply";
+                blockBuilder = new StringBuilder();
                 continue;
             }
 
@@ -99,6 +108,13 @@ public class JobPostParser {
             if ("Requirements:".equals(trimmedLine)) {
                 flushBlock(jobResponse, currentBlock, blockBuilder);
                 currentBlock = "Requirements";
+                blockBuilder = new StringBuilder();
+                continue;
+            }
+
+            if (trimmedLine.startsWith("ـ ـ ـ")) {
+                flushBlock(jobResponse, currentBlock, blockBuilder);
+                currentBlock = null;
                 blockBuilder = new StringBuilder();
                 continue;
             }
@@ -183,6 +199,10 @@ public class JobPostParser {
 
         if ("Requirements".equals(currentBlock)) {
             appendToDescription(jobResponse, "Requirements:\n" + value);
+        }
+
+        if ("Apply".equals(currentBlock)) {
+            jobResponse.setApply(parseApply(value));
         }
     }
 

@@ -40,7 +40,7 @@ Skills: value
 Apply: value
 
 ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ ـ
-For more tech jobs, follow sho8lanaTech - شغلانة تك:
+For more tech jobs, follow sho8lanaTech:
 
 https://t.me/sho8lanaTech
 https://sho8lanatech.vercel.app/
